@@ -1,65 +1,178 @@
-import { StyleSheet, View, Text, Image } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { useRouter } from "expo-router";
+
 import MainLayout from "./layout";
+import { Colors } from "@/constants/colors";
+import { Fonts } from "@/constants/fonts";
 
 function HomeContent() {
-    return (
-        <View style={style.main}>
-            <View style={style.top}>
-                <View style={style.logoArea}>
-                    <Image 
-                        style={style.logo}
-                        source={require("@/assets/logo.png")}
-                        resizeMode="stretch"
-                    />
-                </View>
-                <Text style={{
-                    color: "#0B4F4A",
-                    textAlign: "justify",
-                }}>Bem vindo ao Agendei.com</Text>
-            </View>
-            <View style={style.bot}>
+  const router = useRouter();
 
-            </View>
+  return (
+    <View style={style.main}>
+      <View style={style.top}>
+        <View style={style.logoArea}>
+          <Image
+            style={style.logo}
+            source={require("@/assets/images/logo.png")}
+            resizeMode="stretch"
+          />
         </View>
-    )
+        <Text
+          style={{
+            fontFamily: Fonts.pBold,
+            width: 190,
+            fontSize: 25,
+            position: "absolute",
+            top: "70%",
+            color: Colors.primaria3,
+            textAlign: "justify",
+            alignSelf: "center",
+            letterSpacing: 1,
+          }}
+        >
+          Bem vindo ao Agendei.
+          <Text
+            style={{
+              fontFamily: Fonts.pRegular,
+            }}
+          >
+            com
+          </Text>
+        </Text>
+        <View
+          style={{
+            position: "absolute",
+            width: "75%",
+            height: 2,
+            backgroundColor: Colors.background,
+            bottom: -40,
+            alignSelf: "center",
+          }}
+        />
+      </View>
+
+      <View style={style.bot}>
+        <Text
+          style={{
+            top: 40,
+            textAlign: "center",
+            fontSize: 18,
+            fontFamily: Fonts.pRegular,
+            color: Colors.secundaria5,
+          }}
+        >
+          O Agendei.com é uma plataforma completa para gerenciar clientes,
+          serviços e horários em um só lugar, facilitando o dia a dia da sua
+          empresa
+        </Text>
+      </View>
+
+      <View style={style.bottons}>
+        <Pressable
+          style={style.bnt1}
+          onPress={() => router.push("/(dashboard)/about")}
+          android_ripple={{
+            color: Colors.androidRipple,
+          }}
+        >
+          <Text
+            style={{
+              fontFamily: Fonts.pBold,
+              color: Colors.secundaria2,
+              fontSize: 15,
+            }}
+          >
+            Agendar
+          </Text>
+        </Pressable>
+        <Pressable
+          style={style.bnt2}
+          onPress={() => router.push("/(dashboard)/about")}
+          android_ripple={{
+            color: Colors.androidRipple,
+          }}
+        >
+          <Text
+            style={{
+              fontFamily: Fonts.pBold,
+              color: Colors.primaria3,
+              fontSize: 15,
+            }}
+          >
+            Saiba Mais
+          </Text>
+        </Pressable>
+      </View>
+    </View>
+  );
 }
 
 export default function Home() {
-    return (
-        <MainLayout>
-            <HomeContent/>
-        </MainLayout>
-    )
+  return (
+    <MainLayout>
+      <HomeContent />
+    </MainLayout>
+  );
 }
 
 const style = StyleSheet.create({
-    main: {
-        justifyContent: "center",
-        alignSelf: "center",
-        flex: 1,
-        flexDirection: "column",
-        width: "80%",
-    },
-    top: {
-        position: "relative",
-        alignSelf: "center",
-        width: 300,
-        height: 200,
-        backgroundColor: "",
-    },
-    bot: {
-        backgroundColor: "rgba(5, 245, 5, 0.2)",
-        width: 100,
-        height: 500,
-    },
-    logo: {
-        position: "absolute",
-        alignSelf: "center",
-        marginTop: 10,
-        width: 117,
-        height: 90,
-    },
-    logoArea: {
-
-    }
-})
+  main: {
+    justifyContent: "center",
+    alignSelf: "center",
+    flex: 1,
+    flexDirection: "column",
+    width: "80%",
+  },
+  top: {
+    position: "relative",
+    top: -100,
+    alignSelf: "center",
+    width: 300,
+    height: 200,
+    backgroundColor: "",
+  },
+  bot: {
+    position: "relative",
+    top: -70,
+    alignSelf: "center",
+    width: "90%",
+    height: "40%",
+  },
+  logo: {
+    position: "absolute",
+    top: 30,
+    left: 80,
+    marginTop: 10,
+    width: 117,
+    height: 90,
+  },
+  logoArea: {},
+  bottons: {
+    position: "absolute",
+    justifyContent: "space-between",
+    alignItems: "center",
+    top: "63%",
+    width: "100%",
+    height: 100,
+  },
+  bnt1: {
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: Colors.primaria3,
+    width: "100%",
+    height: 45,
+    borderRadius: 5,
+  },
+  bnt2: {
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: Colors.secundaria2,
+    width: "100%",
+    height: 45,
+    borderRadius: 5,
+  },
+  active: {
+    opacity: 0.5,
+  },
+});

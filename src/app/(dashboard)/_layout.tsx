@@ -4,7 +4,11 @@ import { View } from "react-native";
 import { SafeAreaProvider, useSafeAreaInsets} from "react-native-safe-area-context";
 import * as NavigationBar from "expo-navigation-bar";
 
+import { Colors } from "@/constants/colors";
+
+
 function LayoutContent() {
+
   const insets = useSafeAreaInsets();
   NavigationBar.setVisibilityAsync("hidden");
 
@@ -13,7 +17,7 @@ function LayoutContent() {
       <View
         style={{
           height: insets.top,
-          backgroundColor: "#0e3f3c",
+          backgroundColor: Colors.primaria3,
         }}
       />
 

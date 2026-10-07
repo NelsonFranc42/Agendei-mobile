@@ -1,6 +1,8 @@
 import { StyleSheet, View, Text, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
+import { Colors } from "@/constants/colors";
+
 type Props = {
   children: React.ReactNode;
 };
@@ -11,29 +13,29 @@ export default function MainLayout({ children }: Props) {
       <View style={style.mainback}>
       {/* Estrutura do background */}
       <Image
-        source={require("@/assets/form.png")}
+        source={require("@/assets/images/form.png")}
         style={style.image}
         resizeMode="stretch"
       />
       <Image
-        source={require("@/assets/form.png")}
+        source={require("@/assets/images/form.png")}
         style={style.imagedown}
         resizeMode="stretch"
       />
       <Image
-        source={require("@/assets/fundo.jpg")}
+        source={require("@/assets/images/fundo.jpg")}
         style={style.back}
         resizeMode="contain"
       />
       <LinearGradient
-        colors={["#e9e9e9", "#e9e9e9b2", "#e9e9e970"]}
-        locations={[0.1, 0.5, 1]}
+        colors={[Colors.secundaria2, Colors.secundaria2, Colors.secundaria2, "#e9e9e970"]}
+        locations={[0.1, 0.5, 0.6, 1]}
         style={{
           position: "absolute",
           left: 0,
           bottom: 0,
           width: "100%",
-          height: "50%",
+          height: "100%",
           zIndex: -1,
         }}
       />
@@ -53,7 +55,7 @@ const style = StyleSheet.create({
   },
   mainback: {
     position: "relative",
-    backgroundColor: "#e9e9e9",
+    backgroundColor: Colors.secundaria2,
     flex: 1,
     zIndex: -999,
   },
@@ -89,7 +91,5 @@ const style = StyleSheet.create({
     flexDirection: "column",
     width: "100%",
     height: "100%",
-    justifyContent: "center",
-    alignContent: "center"
   }
 });
