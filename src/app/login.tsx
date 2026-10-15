@@ -14,6 +14,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import { useAuth } from '../../context/AuthContext';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { cores } from './temas';
 
 const logo = require('../../assets/images/logo.png');
 const cornerShape = require('../../assets/images/form.png');
@@ -48,7 +49,7 @@ function FormField({
       <TextInput
         style={styles.input}
         placeholder={placeholder}
-        placeholderTextColor="#9CA3AF"
+        placeholderTextColor={cores.textoDica}
         value={value}
         onChangeText={onChangeText}
         secureTextEntry={secureTextEntry}
@@ -190,16 +191,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     borderRadius: 10,
     borderWidth: 1.5,
-    borderColor: '#153F35',
+    borderColor: cores.primaria,
   },
   voltarButtonText: {
-    color: '#153F35',
+    color: cores.primaria,
     fontWeight: '600',
   },
   flex: { flex: 1 },
   screen: {
     flex: 1,
-    backgroundColor: '#F4F5F3',
+    backgroundColor: cores.fundo,
   },
   cornerTopRight: {
     position: 'absolute',
@@ -248,15 +249,15 @@ const styles = StyleSheet.create({
   brand: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#153F35',
+    color: cores.primaria,
     marginBottom: 24,
   },
   card: {
     width: '100%',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: cores.superficie,
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: '#E5E7EB',
+    borderColor: cores.borda,
     padding: 20,
     marginBottom: 16,
   },
@@ -271,57 +272,57 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 15,
     fontWeight: '700',
-    color: '#153F35',
+    color: cores.primaria,
     marginRight: 8,
   },
   labelLine: {
     flex: 1,
     height: 1,
-    backgroundColor: '#153F35',
+    backgroundColor: cores.primaria,
     opacity: 0.35,
   },
   hint: {
     fontSize: 12,
-    color: '#9CA3AF',
+    color: cores.textoDica,
     marginBottom: 8,
   },
   input: {
-    backgroundColor: '#EEF0EE',
+    backgroundColor: cores.fundoInput,
     borderRadius: 8,
     paddingVertical: 12,
     paddingHorizontal: 14,
     fontSize: 14,
-    color: '#374151',
+    color: cores.textoInput,
   },
   clearButton: {
     borderWidth: 1.5,
-    borderColor: '#153F35',
+    borderColor: cores.primaria,
     borderRadius: 10,
     paddingVertical: 14,
     alignItems: 'center',
     marginTop: 4,
   },
   clearButtonText: {
-    color: '#153F35',
+    color: cores.primaria,
     fontWeight: '700',
     fontSize: 15,
   },
   errorText: {
-    color: '#B91C1C',
+    color: cores.erro,
     fontSize: 13,
     textAlign: 'center',
     marginBottom: 12,
   },
   signupCard: {
     width: '100%',
-    backgroundColor: '#153F35',
+    backgroundColor: cores.primaria,
     borderRadius: 16,
     padding: 20,
     alignItems: 'center',
     marginBottom: 16,
   },
   signupTitle: {
-    color: '#FFFFFF',
+    color: cores.superficie,
     fontWeight: '700',
     fontSize: 15,
     textAlign: 'center',
@@ -343,19 +344,19 @@ const styles = StyleSheet.create({
   signupButton: {
     width: '100%',
     borderWidth: 1.5,
-    borderColor: '#FFFFFF',
+    borderColor: cores.superficie,
     borderRadius: 10,
     paddingVertical: 12,
     alignItems: 'center',
   },
   signupButtonText: {
-    color: '#FFFFFF',
+    color: cores.superficie,
     fontWeight: '700',
     fontSize: 14,
   },
   loginButton: {
     width: '100%',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: cores.superficie,
     borderRadius: 14,
     paddingVertical: 16,
     alignItems: 'center',
@@ -366,7 +367,7 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   loginButtonText: {
-    color: '#153F35',
+    color: cores.primaria,
     fontWeight: '700',
     fontSize: 16,
   },

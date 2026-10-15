@@ -3,6 +3,7 @@ import {View,Text,Pressable,StyleSheet,Image,TextInput,} from 'react-native';
 import { useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
+import { cores } from './temas';
 
 interface AgendarProps {
   onService?: () => void;
@@ -37,7 +38,7 @@ export default function Agendar({ onService }: AgendarProps) {
         style={styles.backButton}
         onPress={() => router.back()}
       >
-        <Ionicons name="arrow-back" size={28} color="#153F35" />
+        <Ionicons name="arrow-back" size={28} color= {cores.primaria} />
       </Pressable>
 
       <View style={styles.backgroundArt}>
@@ -49,7 +50,7 @@ export default function Agendar({ onService }: AgendarProps) {
 
         <LinearGradient
           colors={[
-            '#F4F5F3',
+            cores.fundo,
             'rgba(244,245,243,0.9)',
             'rgba(244,245,243,0.35)',
             'rgba(244,245,243,0.05)',
@@ -83,7 +84,7 @@ export default function Agendar({ onService }: AgendarProps) {
           <TextInput
             style={styles.linkInput}
             placeholder="Cole o link da agenda aqui"
-            placeholderTextColor="#9CA3AF"
+            placeholderTextColor={cores.textoDica}
           />
 
           <Pressable
@@ -103,7 +104,7 @@ export default function Agendar({ onService }: AgendarProps) {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: '#F4F5F3',
+    backgroundColor: cores.fundo,
   },
 
   cornerTopRight: {
@@ -135,7 +136,7 @@ const styles = StyleSheet.create({
     width: 45,
     height: 45,
     borderRadius: 23,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: cores.superficie,
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 5,
@@ -177,7 +178,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '400',
     lineHeight: 30,
-    color: '#153F35',
+    color: cores.primaria,
     textAlign: 'center',
   },
 
@@ -186,7 +187,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '400',
     lineHeight: 30,
-    color: '#153F35',
+    color: cores.primaria,
     textAlign: 'left',
   },
 
@@ -203,7 +204,7 @@ const styles = StyleSheet.create({
     maxWidth: 300,
     fontSize: 16,
     lineHeight: 24,
-    color: '#6B7280',
+    color: cores.textoSecundario,
     textAlign: 'left',
   },
 
@@ -217,23 +218,23 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     paddingHorizontal: 16,
     borderRadius: 10,
-    backgroundColor: '#FFFFFF',
-    color: '#374151',
+    backgroundColor: cores.superficie,
+    color: cores.textoInput,
     fontSize: 15,
     borderWidth: 1,
-    borderColor: '#E5E7EB',
+    borderColor: cores.borda,
   },
 
   primaryButton: {
     width: '100%',
     paddingVertical: 16,
     borderRadius: 10,
-    backgroundColor: '#153F35',
+    backgroundColor: cores.primaria,
     alignItems: 'center',
   },
 
   primaryButtonText: {
-    color: '#FFFFFF',
+    color: cores.superficie,
     fontSize: 15,
     fontWeight: '600',
   },

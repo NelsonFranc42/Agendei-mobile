@@ -1,6 +1,7 @@
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { cores } from './temas';
 
 export default function Sobre() {
   const router = useRouter();
@@ -38,10 +39,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     borderRadius: 10,
     borderWidth: 1.5,
-    borderColor: '#153F35',
+    borderColor: cores.primaria,
   },
   voltarButtonText: {
-    color: '#153F35',
+    color: cores.primaria,
     fontWeight: '600',
   },
   container: {
@@ -49,18 +50,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 24,
-    backgroundColor: '#F4F5F3',
+    backgroundColor: cores.fundo,
   },
   title: {
     fontSize: 24,
     fontWeight: '700',
-    color: '#153F35',
+    color: cores.primaria,
     marginBottom: 12,
     textAlign: 'center',
   },
   text: {
     fontSize: 16,
-    color: '#6B7280',
+    color: cores.textoSecundario,
     textAlign: 'center',
   },
 });

@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Pressable, StyleSheet, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { cores } from './temas';
 
 interface InicioProps {
   onAgendar?: () => void;
@@ -30,7 +31,7 @@ export default function Inicio({ onAgendar, onSaibaMais }: InicioProps) {
         <Image source={background} style={styles.backgroundImage} resizeMode="cover" />
         <LinearGradient
           colors={[
-            '#F4F5F3',
+            cores.fundo,
             'rgba(244,245,243,0.9)',
             'rgba(244,245,243,0.35)',
             'rgba(244,245,243,0.05)',
@@ -70,7 +71,7 @@ export default function Inicio({ onAgendar, onSaibaMais }: InicioProps) {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: '#F4F5F3',
+    backgroundColor: cores.fundo,
   },
   cornerTopLeft: {
     position: 'absolute',
@@ -121,7 +122,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '400',
     lineHeight: 30,
-    color: '#153F35',
+    color: cores.primaria,
     textAlign: 'center',
   },
   brand: { fontWeight: '700' },
@@ -131,7 +132,7 @@ const styles = StyleSheet.create({
     maxWidth: 300,
     fontSize: 16,
     lineHeight: 24,
-    color: '#6B7280',
+    color: cores.textoSecundario,
     textAlign: 'center',
   },
   actions: {
@@ -143,18 +144,18 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingVertical: 16,
     borderRadius: 10,
-    backgroundColor: '#153F35',
+    backgroundColor: cores.primaria,
     alignItems: 'center',
   },
-  primaryButtonText: { color: '#fff', fontSize: 15, fontWeight: '600' },
+  primaryButtonText: { color: cores.superficie, fontSize: 15, fontWeight: '600' },
   secondaryButton: {
     width: '100%',
     paddingVertical: 16,
     borderRadius: 10,
-    backgroundColor: '#fff',
+    backgroundColor: cores.superficie,
     borderWidth: 1.5,
-    borderColor: '#153F35',
+    borderColor: cores.primaria,
     alignItems: 'center',
   },
-  secondaryButtonText: { color: '#153F35', fontSize: 15, fontWeight: '600' },
+  secondaryButtonText: { color: cores.primaria, fontSize: 15, fontWeight: '600' },
 });
