@@ -1,5 +1,6 @@
-import { StyleSheet, View, Text, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import { Image, StyleSheet, View } from "react-native";
+import { useDimension } from "@/hooks/useDimension";
 
 import { Colors } from "@/constants/colors";
 
@@ -8,44 +9,56 @@ type Props = {
 };
 
 export default function MainLayout({ children }: Props) {
+
+    const { width, height } = useDimension();
+
   return (
     <View style={style.main}>
       <View style={style.mainback}>
-      {/* Estrutura do background */}
-      <Image
-        source={require("@/assets/images/form.png")}
-        style={style.image}
-        resizeMode="stretch"
-      />
-      <Image
-        source={require("@/assets/images/form.png")}
-        style={style.imagedown}
-        resizeMode="stretch"
-      />
-      <Image
-        source={require("@/assets/images/fundo.jpg")}
-        style={style.back}
-        resizeMode="contain"
-      />
-      <LinearGradient
-        colors={[Colors.secundaria2, Colors.secundaria2, Colors.secundaria2, "#e9e9e970"]}
-        locations={[0.1, 0.5, 0.6, 1]}
-        style={{
-          position: "absolute",
-          left: 0,
-          bottom: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: -1,
-        }}
-      />
-      {/* Fim da estrutura do background */}
+        {/* Estrutura do background */}
+        <Image
+          source={require("@/assets/images/form.png")}
+          style={style.image}
+          resizeMode="stretch"
+        />
+        <Image
+          source={require("@/assets/images/form.png")}
+          style={style.imagedown}
+          resizeMode="stretch"
+        />
+        <Image
+          source={require("@/assets/images/fundo.jpg")}
+          style={style.back}
+          resizeMode="contain"
+        />
+        <LinearGradient
+          colors={[
+            Colors.secundaria2,
+            Colors.secundaria2,
+            Colors.secundaria2,
+            "#e9e9e970",
+          ]}
+          locations={[0.1, 0.5, 0.6, 1]}
+          style={{
+            position: "absolute",
+            left: 0,
+            bottom: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: -1,
+          }}
+        />
+        {/* Fim da estrutura do background */}
+      </View>
+      <View style={{
+        position: "absolute",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        width: width,
+        height: height,
+      }}>{children}</View>
     </View>
-    <View style={style.content}>
-      {children}
-    </View>
-    </View>
-    
   );
 }
 
@@ -86,10 +99,6 @@ const style = StyleSheet.create({
     zIndex: -2,
   },
   content: {
-    position: "absolute",
-    flex: 1,
-    flexDirection: "column",
-    width: "100%",
-    height: "100%",
-  }
+    
+  },
 });

@@ -1,6 +1,7 @@
 import { Ionicons } from "@expo/vector-icons/";
 import { useRouter } from "expo-router";
 import { Image, StyleSheet, Text, View } from "react-native";
+import { useDimension } from "@/hooks/useDimension";
 
 import { Colors } from "../../constants/colors";
 import { Fonts } from "@/constants/fonts";
@@ -8,6 +9,8 @@ import MainLayout from "./layout";
 
 function AboutContent() {
   const router = useRouter();
+
+  const { width, height } = useDimension();
 
   return (
     <View style={style.main}>
@@ -17,7 +20,7 @@ function AboutContent() {
         color= {Colors.primaria3}
         style={{
           position: "absolute",
-          right: 20,
+          right: width * -0.2,
           top: 20,
         }}
         onPress={() => router.back()}
@@ -27,7 +30,7 @@ function AboutContent() {
         <Image
           style={{
             position: "absolute",
-            left: 125,
+            right: width * 0.13,
             top: 50,
             width: 117,
             height: 90,
@@ -48,7 +51,17 @@ function AboutContent() {
         Agendei.com
       </Text>
       {/* Caixa branca */}
-      <View style={style.bot}>
+      <View style={{
+        position: "absolute",
+        top: height * 0.24,
+        justifyContent: "space-between",
+        alignSelf: "center",
+        width: width * 0.81,
+        height: height * 0.7,
+        backgroundColor: Colors.clear,
+        borderRadius: 5,
+        paddingLeft: "6%",
+      }}>
         <View style={style.upContent}>
           <View>
             <Text
@@ -145,17 +158,6 @@ export default function About() {
 const style = StyleSheet.create({
   main: {
     flex: 1,
-  },
-  bot: {
-    position: "absolute",
-    bottom: "4%",
-    justifyContent: "space-between",
-    alignSelf: "center",
-    width: "81%",
-    height: "70%",
-    backgroundColor: Colors.clear,
-    borderRadius: 5,
-    paddingLeft: "6%",
   },
   upContent: {
     justifyContent: "space-between",

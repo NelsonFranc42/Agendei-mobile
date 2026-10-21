@@ -3,14 +3,14 @@ import { StatusBar } from "expo-status-bar";
 import { View } from "react-native";
 import { SafeAreaProvider, useSafeAreaInsets} from "react-native-safe-area-context";
 import * as NavigationBar from "expo-navigation-bar";
+import { useSafeColor } from "@/hooks/useSafeColor";
 
 import { Colors } from "@/constants/colors";
 
 
 function LayoutContent() {
 
-  const insets = useSafeAreaInsets();
-  NavigationBar.setVisibilityAsync("hidden");
+  const insets = useSafeColor();
 
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>

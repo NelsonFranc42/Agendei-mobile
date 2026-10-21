@@ -57,7 +57,7 @@ function HomeContent() {
           style={{
             top: 40,
             textAlign: "center",
-            fontSize: 18,
+            fontSize: 15,
             fontFamily: Fonts.pRegular,
             color: Colors.secundaria5,
           }}
@@ -71,16 +71,16 @@ function HomeContent() {
       <View style={style.bottons}>
         <Pressable
           style={style.bnt1}
-          onPress={() => router.push("/(dashboard)/about")}
+          onPress={() => router.push("/(login)/login")}
           android_ripple={{
-            color: Colors.androidRipple,
+            color: Colors.androidRipple
           }}
         >
           <Text
             style={{
               fontFamily: Fonts.pBold,
               color: Colors.secundaria2,
-              fontSize: 15,
+              fontSize: 12,
             }}
           >
             Agendar
@@ -97,7 +97,7 @@ function HomeContent() {
             style={{
               fontFamily: Fonts.pBold,
               color: Colors.primaria3,
-              fontSize: 15,
+              fontSize: 12,
             }}
           >
             Saiba Mais
