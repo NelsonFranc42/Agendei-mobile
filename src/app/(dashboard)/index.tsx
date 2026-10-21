@@ -1,9 +1,9 @@
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { useRouter } from "expo-router";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
-import MainLayout from "./layout";
 import { Colors } from "@/constants/colors";
 import { Fonts } from "@/constants/fonts";
+import MainLayout from "../../components/layout";
 
 function HomeContent() {
   const router = useRouter();
@@ -73,7 +73,7 @@ function HomeContent() {
           style={style.bnt1}
           onPress={() => router.push("/(login)/login")}
           android_ripple={{
-            color: Colors.androidRipple
+            color: Colors.androidRipple,
           }}
         >
           <Text

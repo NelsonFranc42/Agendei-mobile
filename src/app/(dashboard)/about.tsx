@@ -1,11 +1,11 @@
+import { useDimension } from "@/hooks/useDimension";
 import { Ionicons } from "@expo/vector-icons/";
 import { useRouter } from "expo-router";
 import { Image, StyleSheet, Text, View } from "react-native";
-import { useDimension } from "@/hooks/useDimension";
 
-import { Colors } from "../../constants/colors";
 import { Fonts } from "@/constants/fonts";
-import MainLayout from "./layout";
+import { Colors } from "../../constants/colors";
+import MainLayout from "../../components/layout";
 
 function AboutContent() {
   const router = useRouter();
@@ -17,7 +17,7 @@ function AboutContent() {
       <Ionicons
         name="arrow-back"
         size={40}
-        color= {Colors.primaria3}
+        color={Colors.primaria3}
         style={{
           position: "absolute",
           right: width * -0.2,
@@ -51,17 +51,19 @@ function AboutContent() {
         Agendei.com
       </Text>
       {/* Caixa branca */}
-      <View style={{
-        position: "absolute",
-        top: height * 0.24,
-        justifyContent: "space-between",
-        alignSelf: "center",
-        width: width * 0.81,
-        height: height * 0.7,
-        backgroundColor: Colors.clear,
-        borderRadius: 5,
-        paddingLeft: "6%",
-      }}>
+      <View
+        style={{
+          position: "absolute",
+          top: height * 0.24,
+          justifyContent: "space-between",
+          alignSelf: "center",
+          width: width * 0.81,
+          height: height * 0.7,
+          backgroundColor: Colors.clear,
+          borderRadius: 5,
+          paddingLeft: "6%",
+        }}
+      >
         <View style={style.upContent}>
           <View>
             <Text
@@ -74,7 +76,8 @@ function AboutContent() {
                 marginBottom: "1%",
               }}
             >
-              Sobre o Agendei.<Text style={{ fontFamily: Fonts.pRegular }}>com</Text>
+              Sobre o Agendei.
+              <Text style={{ fontFamily: Fonts.pRegular }}>com</Text>
             </Text>
             <View /* linha */
               style={{
@@ -86,12 +89,14 @@ function AboutContent() {
               }}
             />
           </View>
-          <View style={{
-            position: "relative",
-            justifyContent: "space-around",
-            width: "100%",
-            height: "80%"
-          }}>
+          <View
+            style={{
+              position: "relative",
+              justifyContent: "space-around",
+              width: "100%",
+              height: "80%",
+            }}
+          >
             <Text style={style.text}>
               O Agendei.com é um sistema desenvolvido como Trabalho de Conclusão
               de Curso com o objetivo de facilitar a gestão de agendamentos,
@@ -173,6 +178,6 @@ const style = StyleSheet.create({
     textAlign: "left",
     fontFamily: Fonts.pRegular,
     color: Colors.font,
-    fontSize: 13
-  }
+    fontSize: 13,
+  },
 });

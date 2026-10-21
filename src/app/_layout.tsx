@@ -7,10 +7,10 @@ import * as SplashScreen from "expo-splash-screen";
 import { Fonts } from "@/constants/fonts";
 import { Colors } from "@/constants/colors";
 
-/* SplashScreen.preventAutoHideAsync(); */
+ SplashScreen.preventAutoHideAsync(); 
 
 export default function Layout() {
-  const [font] = useFonts({
+  const [fontsLoaded, fontError] = useFonts({
     poppinsRegular: require("@/assets/fonts/Poppins-Regular.ttf"),
     poppinsMedium: require("@/assets/fonts/Poppins-Medium.ttf"),
     poppinsSBold: require("@/assets/fonts/Poppins-SemiBold.ttf"),
@@ -19,7 +19,7 @@ export default function Layout() {
 
   /* Para que as telas não sejam apresentadas se as fontes ainda não estiverem prontas */
 
-/* 
+
   useEffect(() => {
     if (fontsLoaded || fontError) {
       SplashScreen.hideAsync();
@@ -28,7 +28,7 @@ export default function Layout() {
 
   if (!fontsLoaded && !fontError) {
     return null;
-  } */
+  } 
 
   return (
     <Stack screenOptions={{ headerShown: false }}>

@@ -1,9 +1,10 @@
-import { Image, Pressable, StyleSheet, Text, TextInput, View, ScrollView,} from "react-native";
-import React from "react";
-import { useDimension } from "@/hooks/useDimension";
-import MainLayout from "../(dashboard)/layout";
 import { Colors } from "@/constants/colors";
 import { Fonts } from "@/constants/fonts";
+import { useDimension } from "@/hooks/useDimension";
+import { router, useRouter } from "expo-router";
+import React from "react";
+import { Image, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import MainLayout from "../../components/layout";
 
 function styleContent(width: number, height: number) {
   return StyleSheet.create({
@@ -114,14 +115,14 @@ function styleContent(width: number, height: number) {
 
     resetBtTxt: {
       color: Colors.primaria3,
-      fontWeight: "bold",
+      fontFamily: Fonts.pBold,
       fontSize: width * 0.035,
     },
 
     titleRedBt: {
       color: Colors.secundaria1,
       fontSize: width * 0.035,
-      fontWeight: "bold",
+      fontFamily: Fonts.pBold,
       marginTop: 0,
       marginBottom: 12,
     },
@@ -129,6 +130,7 @@ function styleContent(width: number, height: number) {
     txtRed: {
       color: Colors.secundaria1,
       fontSize: width * 0.03,
+      fontFamily: Fonts.pRegular,
       textAlign: "center",
       lineHeight: 16,
       marginBottom: 15,
@@ -146,7 +148,7 @@ function styleContent(width: number, height: number) {
 
     txtBtRed: {
       color: Colors.secundaria1,
-      fontWeight: "bold",
+      fontFamily: Fonts.pBold,
       fontSize: width * 0.035,
     },
 
@@ -164,8 +166,8 @@ function styleContent(width: number, height: number) {
 
     txtBtEnter: {
       color: Colors.primaria3,
-      fontWeight: "bold",
-      fontSize: width * 0.04,
+      fontSize: width * 0.037,
+      fontFamily: Fonts.pBold,
     },
 
     topStyle: {
@@ -209,7 +211,6 @@ function LoginContent() {
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
       >
-
         <View style={style.onContent}>
           <Image
             style={style.logo}
@@ -268,9 +269,7 @@ function LoginContent() {
         </View>
 
         <View style={style.trContent}>
-          <Text style={style.titleRedBt}>
-            Não possui uma conta?
-          </Text>
+          <Text style={style.titleRedBt}>Não possui uma conta?</Text>
 
           <Text style={style.txtRed}>
             Crie uma nova conta e comece{"\n"}
@@ -280,7 +279,7 @@ function LoginContent() {
           <Pressable
             style={style.btRed}
             onPress={() => {
-              // Adicione aqui a navegação para o cadastro
+              router.push("/(login)/register");
             }}
           >
             <Text style={style.txtBtRed}>Cadastrar</Text>
@@ -290,7 +289,7 @@ function LoginContent() {
         <Pressable
           style={style.btEnter}
           onPress={() => {
-            // Adicione aqui a validação e o login
+            
           }}
         >
           <Text style={style.txtBtEnter}>Fazer login</Text>

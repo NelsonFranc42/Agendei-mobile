@@ -23,6 +23,7 @@ export default function Layout() {
         screenOptions={{
           headerShown: false,
           tabBarStyle: {display: "none"},
+          animation: "shift",
         }}
       />
     </View>
