@@ -28,6 +28,12 @@ function LayoutContent() {
           headerShown: false,
         }}
       >
+        <Stack.Screen name="link-page" />
+        <Stack.Screen name="services" />
+        <Stack.Screen name="datetime" />
+        <Stack.Screen name="personal-info" />
+        <Stack.Screen name="confirmation" />
+        <Stack.Screen name="success" />
       </Stack>
     </View>
   );
