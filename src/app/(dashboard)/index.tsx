@@ -3,7 +3,7 @@ import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
 import { Colors } from "@/constants/colors";
 import { Fonts } from "@/constants/fonts";
-import MainLayout from "../../components/layout";
+import { MainLayout } from "../../components/layout";
 
 function HomeContent() {
   const router = useRouter();

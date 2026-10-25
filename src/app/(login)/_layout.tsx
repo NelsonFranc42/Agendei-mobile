@@ -25,7 +25,10 @@ export default function Layout() {
           tabBarStyle: {display: "none"},
           animation: "shift",
         }}
-      />
+      >
+        <Tabs.Screen name="login"/>
+        <Tabs.Screen name="register"/>
+      </Tabs>
     </View>
     )
 }

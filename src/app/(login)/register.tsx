@@ -3,16 +3,8 @@ import { Fonts } from "@/constants/fonts";
 import { useDimension } from "@/hooks/useDimension";
 import { router, useRouter } from "expo-router";
 import React from "react";
-import {
-  Image,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
-import MainLayout from "../../components/layout";
+import { Image, Pressable, ScrollView, StyleSheet, Text, TextInput, View} from "react-native";
+import { MainLayout } from "../../components/layout";
 
 function styleContent(width: number, height: number) {
   return StyleSheet.create({

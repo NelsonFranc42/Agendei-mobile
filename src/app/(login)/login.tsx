@@ -4,7 +4,7 @@ import { useDimension } from "@/hooks/useDimension";
 import { router, useRouter } from "expo-router";
 import React from "react";
 import { Image, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
-import MainLayout from "../../components/layout";
+import { MainLayout } from "../../components/layout";
 
 function styleContent(width: number, height: number) {
   return StyleSheet.create({
@@ -289,7 +289,7 @@ function LoginContent() {
         <Pressable
           style={style.btEnter}
           onPress={() => {
-            
+            router.push("../(shedule)/link-page.tsx");
           }}
         >
           <Text style={style.txtBtEnter}>Fazer login</Text>

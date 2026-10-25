@@ -8,7 +8,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-export default function MainLayout({ children }: Props) {
+export function MainLayout({ children }: Props) {
 
     const { width, height } = useDimension();
 
@@ -97,8 +97,5 @@ const style = StyleSheet.create({
     width: 530,
     height: 530,
     zIndex: -2,
-  },
-  content: {
-    
-  },
+  }
 });

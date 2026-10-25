@@ -1,6 +1,7 @@
 import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
+import { StatusBar } from "react-native";
 
 import * as SplashScreen from "expo-splash-screen";
 
@@ -33,7 +34,6 @@ export default function Layout() {
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="(dashboard)" />
-      <Stack.Screen name="(login)" />
     </Stack>
   );
 }

@@ -5,7 +5,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 
 import { Fonts } from "@/constants/fonts";
 import { Colors } from "../../constants/colors";
-import MainLayout from "../../components/layout";
+import {MainLayout} from "../../components/layout";
 
 function AboutContent() {
   const router = useRouter();
