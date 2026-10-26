@@ -41,3 +41,4 @@ example
 # generated native folders
 /ios
 /android
+src/app/(main)/_layout.tsx
